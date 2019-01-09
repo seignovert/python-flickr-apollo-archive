@@ -1,7 +1,7 @@
 Flickr Apollo Archive
 =====================
 
-|Build| |Coverage| |PyPI| |Status| |Version| |Python| |License|
+|Build| |Coverage| |PyPI| |Status| |Version| |Python| |License| |Tutorial|
 
 .. |Build| image:: https://travis-ci.org/seignovert/python-flickr-apollo-archive.svg?branch=master
         :target: https://travis-ci.org/seignovert/python-flickr-apollo-archive
@@ -17,6 +17,8 @@ Flickr Apollo Archive
         :target: https://pypi.org/project/apollo-archive
 .. |License| image:: https://img.shields.io/pypi/l/apollo-archive.svg?label=License
         :target: https://pypi.org/project/apollo-archive
+.. |Tutorial| image:: https://img.shields.io/badge/Jupyter%20Notebook-tutorial-blue.svg
+        :target: https://nbviewer.jupyter.org/github/seignovert/python-flickr-apollo-archive/blob/master/apolloarchive.ipynb
 
 Python package to list and download all original images from
 `Flickr Apollo Archive <https://www.flickr.com/photos/projectapolloarchive>`_.
@@ -134,7 +136,7 @@ Sync Flickr photosets:
     > Download: The-project-apollo-archive-is-best-experienced-in-the-albums-view
 
 
-.. warning:: The complete archive is **very large** (62 Gb).
+.. warning:: The complete archive is **very large** (~62 Gb).
 
 Dependencies
 ------------
