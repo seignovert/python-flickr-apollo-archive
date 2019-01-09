@@ -30,8 +30,10 @@ Python package to list and download all original images from
 
 
 `Project Apollo Archive <https://www.flickr.com/photos/projectapolloarchive/>`_
-`Apollo 11 Magazine 40/S (v1 / levels-adj) <https://www.flickr.com/photos/projectapolloarchive/sets/72157658601662068/>`_ -
-`AS11-40-5949 <https://www.flickr.com/photos/projectapolloarchive/21660108915/in/album-72157658601662068/>`_ -
+/
+`Apollo 11 Magazine 40/S (v1 / levels-adj) <https://www.flickr.com/photos/projectapolloarchive/sets/72157658601662068/>`_
+/
+`AS11-40-5949 <https://www.flickr.com/photos/projectapolloarchive/21660108915/in/album-72157658601662068/>`_
 
 Install
 -------
