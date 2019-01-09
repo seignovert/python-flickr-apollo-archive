@@ -144,3 +144,7 @@ Dependencies
 - tqdm
 - argparse
 
+Disclaimer
+----------
+This project is not supported or endorsed by either JPL or NASA.
+The code is provided "as is", use at your own risk.
