@@ -1,6 +1,23 @@
 Flickr Apollo Archive
 =====================
 
+|Build| |Coverage| |PyPI| |Status| |Version| |Python| |License|
+
+.. |Build| image:: https://travis-ci.org/seignovert/python-flickr-apollo-archive.svg?branch=master
+        :target: https://travis-ci.org/seignovert/python-flickr-apollo-archive
+.. |Coverage| image:: https://coveralls.io/repos/github/seignovert/python-flickr-apollo-archive/badge.svg?branch=master
+        :target: https://coveralls.io/github/seignovert/python-flickr-apollo-archive?branch=master
+.. |PyPI| image:: https://img.shields.io/badge/PyPI-apollo--archive-blue.svg
+        :target: https://pypi.org/project/apollo-archive
+.. |Status| image:: https://img.shields.io/pypi/status/apollo-archive.svg?label=Status
+        :target: https://pypi.org/project/apollo-archive
+.. |Version| image:: https://img.shields.io/pypi/v/apollo-archive.svg?label=Version
+        :target: https://pypi.org/project/apollo-archive
+.. |Python| image:: https://img.shields.io/pypi/pyversions/apollo-archive.svg?label=Python
+        :target: https://pypi.org/project/apollo-archive
+.. |License| image:: https://img.shields.io/pypi/l/apollo-archive.svg?label=License
+        :target: https://pypi.org/project/apollo-archive
+
 Python package to list and download all original images from
 `Flickr Apollo Archive <https://www.flickr.com/photos/projectapolloarchive>`_.
 
