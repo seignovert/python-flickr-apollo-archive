@@ -10,24 +10,34 @@ def folder():
     return 'Announcements'
 
 @pytest.fixture
-def files(folder):
+def pictures(folder):
     return [
-        os.path.join(folder, '1-Also-follow-project-apollo-archive-on-facebook.jpg'),
-        os.path.join(folder, '2-About-the-project-apollo-archive-flickr-gallery.jpg'),
-        os.path.join(folder, '3-The-project-apollo-archive-is-best-experienced-in-the-albums-view.jpg'),
+        'Also-follow-project-apollo-archive-on-facebook',
+        'About-the-project-apollo-archive-flickr-gallery',
+        'The-project-apollo-archive-is-best-experienced-in-the-albums-view',
     ]
 
-def test_cli_sync(capsys):
+@pytest.fixture
+def files(folder, pictures):
+    return [
+        os.path.join(folder, '1-' + pictures[0] + '.jpg'),
+        os.path.join(folder, '2-' + pictures[1] + '.jpg'),
+        os.path.join(folder, '3-' + pictures[2] + '.jpg'),
+    ]
+
+def test_cli_sync(capsys, pictures):
     argv = '--album 0'.split()
     cli_sync(argv)
     out, err = capsys.readouterr()
 
-    assert out == '\n'
+    for picture in pictures:
+        assert picture in out
+
     assert 'Sync Announcements' in err
     assert '3/3' in err
 
 def test_cli_sync_exists(capsys):
-    argv = ['--username', 'Apollo Image Gallery', '--album', '0', '--overwrite']
+    argv = ['--username', 'Apollo Image Gallery', '--album', '0', '--overwrite', '--ncpu', '3']
     cli_sync(argv)
     out, err = capsys.readouterr()
 

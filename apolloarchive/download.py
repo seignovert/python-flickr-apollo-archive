@@ -34,11 +34,15 @@ def sync(user_id=USER_ID, username=None, album=None, overwrite=False, ncpu=1):
                     imgs.append(img)
 
             if len(imgs) > 0:
-                # Async download
-                pool = Pool(ncpu)
-                pool.map(download, imgs)
-                pool.close()
-                pool.join()
+                if ncpu > 1:
+                    # Async download
+                    pool = Pool(ncpu)
+                    pool.map(download, imgs)
+                    pool.close()
+                    pool.join()
+                else:
+                    for img in imgs:
+                        download(img)
                 print('') # Slip line
 
 def download(img, verbose=True, bar=None):
