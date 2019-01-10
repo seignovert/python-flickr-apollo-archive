@@ -12,9 +12,9 @@ def folder():
 @pytest.fixture
 def files(folder):
     return [
-        os.path.join(folder, 'Also-follow-project-apollo-archive-on-facebook.jpg'),
-        os.path.join(folder, 'About-the-project-apollo-archive-flickr-gallery.jpg'),
-        os.path.join(folder, 'The-project-apollo-archive-is-best-experienced-in-the-albums-view.jpg'),
+        os.path.join(folder, '1-Also-follow-project-apollo-archive-on-facebook.jpg'),
+        os.path.join(folder, '2-About-the-project-apollo-archive-flickr-gallery.jpg'),
+        os.path.join(folder, '3-The-project-apollo-archive-is-best-experienced-in-the-albums-view.jpg'),
     ]
 
 def test_cli_sync(capsys):

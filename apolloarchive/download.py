@@ -27,8 +27,8 @@ def sync(user_id=USER_ID, username=None, album=None, overwrite=False, ncpu=1):
         
         if overwrite or len(album) != jpgs:
             imgs = []
-            for photo in tqdm(album.photos, desc=f'Sync {album.slug}', position=0):
-                img = Image(folder, photo)
+            for i in tqdm(range(len(album)), desc=f'Sync {album.slug}', position=0):
+                img = Image(folder, album.photos[i], i+1)
                 if overwrite or not img.exists:
                     img.url # dummy (sync load url)
                     imgs.append(img)
@@ -54,16 +54,18 @@ def download(img, verbose=True, bar=None):
 
 class Image(object):
     '''Image file'''
-    def __init__(self, folder, photo):
+    def __init__(self, folder, photo, n=None):
         self.folder = folder
         self.photo = photo
+        self.n = n
 
     def __repr__(self):
         return f'Image: {self.slug}'
 
     @property
     def filename(self):
-        return os.path.join(self.folder, self.photo.filename)
+        prefix = '' if self.n is None else str(self.n) + '-'
+        return os.path.join(self.folder, prefix + self.photo.filename)
 
     @property
     def exists(self):
