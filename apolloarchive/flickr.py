@@ -47,7 +47,7 @@ class Album(object):
         return f'Album: "{self.title}" ({len(self)} photos)'
 
     def __len__(self):
-        return self.json['photos']
+        return self.json['photos'] + self.json['videos']
 
     @property
     def id(self):
@@ -63,10 +63,13 @@ class Album(object):
 
     @property
     def photos(self):
+        per_page = 500
         if not self.__photos:
-            self._photos = FLICKR.photosets.getPhotos(photoset_id=self.id, user_id=self.user_id)
-            for json in self._photos['photoset']['photo']:
-                self.__photos.append( Photo(json))
+            for page in range(1, int((len(self)-1)/per_page)+2):
+                self._photos = FLICKR.photosets.getPhotos(photoset_id=self.id, user_id=self.user_id,
+                                                          per_page=per_page, page=page)
+                for json in self._photos['photoset']['photo']:
+                    self.__photos.append(Photo(json))
         return self.__photos
     
 class Photo(object):
